@@ -2,7 +2,7 @@ class CreateShips < ActiveRecord::Migration
   def self.up
     create_table :ships do |t|
 		t.string :name
-	 	t.integer :location, :fuel
+	 	t.integer :location_id, :fuel
 
       t.timestamps
     end

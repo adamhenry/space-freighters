@@ -1,6 +1,6 @@
 class Cargo < ActiveRecord::Base
-	belongs_to :ship, :readonly => :true
-	belongs_to :sku, :readonly => :true
+	belongs_to :ship
+	belongs_to :sku
 
 	# a cargos name is that of its sku
 	def name
