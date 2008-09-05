@@ -1,0 +1,18 @@
+
+<div class="spacestation">
+<fieldset>
+	<legend> Spacestation <%= @ship.location.name %> </legend>
+	<ul>
+	<%- for price in @ship.location.prices -%>
+		<li>
+			<%= form_tag(:method => :post, :action => :store ) %>
+			<input type="hidden" value="<%= price.sku.id %>" name="sku" >
+			<input type="Submit" value="buy" name="sale">
+			<input type="Submit" value="sell" name="sale">
+			<%= price.sku.name %>
+			</form>
+		</li>
+	<%- end -%>
+	</ul>
+</fieldset>
+</div>

@@ -1,0 +1,14 @@
+<div class="inventory">
+<fieldset>
+	<legend> Cargo Inventory </legend>
+	<ul>
+	<%- for item in @ship.cargo -%>
+		<li>
+			<%= item.name %>
+		</li>
+	<%- end -%>
+	</ul>
+</fieldset>
+</div>
+
+	

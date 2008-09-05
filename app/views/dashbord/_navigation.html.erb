@@ -1,0 +1,14 @@
+
+<div class="navigation">
+<fieldset>
+<legend> Fly To </legend>
+<%= form_tag(:method => :post, :action => :fly_to ) %>
+	<select name="destination">
+<%- for spacestation in @spacestations -%>
+		<option value="<%= spacestation.id %>"> <%= spacestation.name %> </option>
+<%- end -%>
+	</select>
+	<input type="Submit" value="Fly To">
+	</form>
+</fieldset>
+</div>
