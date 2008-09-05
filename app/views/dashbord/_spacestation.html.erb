@@ -1,7 +1,11 @@
 
 <div class="spacestation">
-<fieldset>
-	<legend> Spacestation <%= @ship.location.name %> </legend>
+	<h2>
+		Spacestation <%= @ship.location.name %>
+	</h2>
+	<h3>
+		Comodities
+	</h3>
 	<ul>
 	<%- for price in @ship.location.prices -%>
 		<li>
@@ -14,5 +18,4 @@
 		</li>
 	<%- end -%>
 	</ul>
-</fieldset>
 </div>

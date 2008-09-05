@@ -1,0 +1,36 @@
+h3 {
+	margin-right: 150;
+}
+
+body {
+	background: #000 fixed url("/images/nebula_stretch.jpg");
+}
+
+.navigation, .spacestation, .inventory, .routes{
+		border: 3px gray solid;
+		margin: 3px 270px 10px 25px;
+		padding: 3px 25px;
+		background: #002;
+}
+
+.routes {
+	float: right;
+	margin: 0px;
+}
+
+.spacestation {
+	background: #002 right url("/images/space_station.jpg") no-repeat;
+	
+}
+
+.navigation {
+		margin-right: 25px;
+		padding-bottom: 10px;
+}
+
+.inventory {
+	float: right;
+	margin: 0px 25px 10px 0;
+	width: 180px;
+}
+
