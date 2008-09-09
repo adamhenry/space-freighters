@@ -2,27 +2,12 @@
 <div class="navigation">
 
 <h2>
-	Navigation
+	Navigation: <%= @ship.location.name %>
 </h2>
 
 	<ul>
-		<%= render(:partal => "routes", :collection => @ship.location.routes) %>
-		<%- for route in @ship.location.routes -%>
-		<li>
-			<%= route.to.name %>: <%= route.distance %> AU
-		</li>
-		<%- end -%>
+		<%= render( :partial => "route", :collection => @ship.location.routes ) %>
 	</ul>
-
-<%= form_tag(:method => :post, :action => :fly_to ) %>
-
-	<select name="destination">
-	<%- for spacestation in @spacestations -%>
-		<option value="<%= spacestation.id %>"> <%= spacestation.name %> </option>
-	<%- end -%>
-	</select>
-
-	<input type="Submit" value="Fly To">
-</form>
+	<h3>Fuel: <%= number_with_delimiter( @ship.fuel ) %>
 
 </div>

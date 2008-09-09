@@ -5,6 +5,7 @@
 	<ul>
 	<%- for item in @ship.cargo -%>
 		<li>
+			<%= item.amount %> :
 			<%= item.name %>
 		</li>
 	<%- end -%>

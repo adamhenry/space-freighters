@@ -1,19 +1,30 @@
 
 <div class="spacestation">
+							<%= @price_max_length %>
+
 	<h2>
 		Spacestation <%= @ship.location.name %>
 	</h2>
+
 	<h3>
 		Comodities
 	</h3>
+	<%- if flash[:station_notice] -%>
+		<div id="notice"><%= flash[:station_notice] %></div>
+	<%- end -%>
+
 	<ul>
 	<%- for price in @ship.location.prices -%>
 		<li>
 			<%= form_tag(:method => :post, :action => :store ) %>
+			<input type="text" name="amount" class="store_field" >
 			<input type="hidden" value="<%= price.sku.id %>" name="sku" >
 			<input type="Submit" value="buy" name="sale">
 			<input type="Submit" value="sell" name="sale">
-			<%= price.sku.name %>
+
+			<%= space_up( sprintf( "%-1$*2$s %3$*4$s",
+			            price.name, @price_max_name_length,
+							number_with_delimiter( price.price ), @price_max_length + 5) )%>
 			</form>
 		</li>
 	<%- end -%>

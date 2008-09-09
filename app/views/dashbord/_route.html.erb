@@ -1,0 +1,10 @@
+		<li>
+			<%= form_tag(:method => :post, :action => :fly_to ) %>
+			<input type="hidden" value="<%= route.to.id %>" name="destination" >
+			<input type="Submit" value="Fly to">
+
+			<%= space_up( sprintf( "%-1$*2$s %3$*4$.3f AU",
+			            route.to.name, @route_max_name_length,
+							route.distance, @route_max_distance_length + 3 ).gsub( /(\d)(?=\d{3}+(\.\d*)?\bA)/, '\1,')  )%>
+			</form>
+		</li>

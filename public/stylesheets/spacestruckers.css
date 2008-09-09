@@ -6,11 +6,35 @@ body {
 	background: #000 fixed url("/images/nebula_stretch.jpg");
 }
 
+li {
+	font-family: monospace;
+}
+
+input.store_field {
+	width: 30px;
+	default: 1;
+}
+
+div.end {
+	position: absolute;
+	top: 150px;
+	left: 50px;
+	background: #002;
+	border: 3px gray solid;
+}
+
+p.end {
+	width: 500px;
+}
+.notice {
+	color: red;
+}
+
 .navigation, .spacestation, .inventory, .routes{
-		border: 3px gray solid;
-		margin: 3px 270px 10px 25px;
-		padding: 3px 25px;
-		background: #002;
+	border: 3px gray solid;
+	margin: 3px 270px 10px 25px;
+	padding: 3px 25px;
+	background: #002;
 }
 
 .routes {
