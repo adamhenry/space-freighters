@@ -1,15 +1,12 @@
 <div class="inventory">
-	<h2>
-		Cargo Inventory 
-	</h2>
-	<ul>
-	<%- for item in @ship.cargo -%>
-		<li>
-			<%= item.amount %> :
-			<%= item.name %>
-		</li>
-	<%- end -%>
-	</ul>
+	<h2> Cargo Hold</h2>
+	<p>
+		Used | Maximum
+		<br />
+		71% | 1570 m<span class="super-script">3</span>
+	</p>
+	<%= render( :partial => "cargos" ) %>
+	<button type="button">Empty Hold</button>
 </div>
 
 	

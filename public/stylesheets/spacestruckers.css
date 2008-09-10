@@ -36,6 +36,10 @@ div.end {
 p.end {
 	width: 500px;
 }
+.super-script {
+	vertical-align: top;
+	font-size: 75%;
+}
 
 .notice {
 	color: red;
@@ -43,7 +47,7 @@ p.end {
 
 .navigation, .spacestation, .inventory {
 	border: 3px gray solid;
-	margin: 3px 270px 10px 25px;
+	margin: 3px 300px 10px 25px;
 	padding: 3px 25px;
 	background: #002;
 }
@@ -124,5 +128,5 @@ img.spacestation-descriptive-image {
 .inventory {
 	float: right;
 	margin: 0px 25px 10px 0;
-	width: 180px;
+	width: 210px;
 }

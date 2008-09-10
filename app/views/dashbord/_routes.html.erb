@@ -3,11 +3,7 @@
 		<h3> Routes </h3>
 		<ul>
 			<%- @ship.location.routes.each do |route| -%>
-				<%= render(:partial => "list_item",
-				           :locals => {
-								  :locals => route,
-								  :left => "route_left",
-								  :right => "route_right" } ) %>
+				<%= list_item_right_left( "route", route ) %>
 			<%- end -%>
 
 			<li class="routes-spacer">

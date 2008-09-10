@@ -1,0 +1,12 @@
+	<div class="cargo-list">
+		<h2>
+			Inventory 
+		</h2>
+		<ul>
+			<%- @ship.cargo.each do |item| -%>
+				<%= list_item_right_left( "cargo", item ) %>
+			<%- end -%>
+		</ul>
+	</div>
+
+

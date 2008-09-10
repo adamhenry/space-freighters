@@ -5,12 +5,7 @@
 
 		<ul>
 			<%- @ship.location.prices.each do |good| -%>
-				<%= render( :partial => "list_item",
-				            :locals => {
-									:locals => good,
-									:left => "good_left",
-									:right => "good_right"
-								} ) %>
+				<%= list_item_right_left( "good", good ) %>
 			<%- end -%>
 			<li class="good-spacer"> </li>
 		</ul>
