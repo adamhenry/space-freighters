@@ -1,13 +1,33 @@
 
 <div class="navigation">
+	<div class=navigation-spacer">
+	<%= image_tag( "4x4.png", :alt => "", :class => "navigation-spacer"  ) %>
+	</div>
+	<div class="spacestation-image">
+		<%= image_tag( "space_station.jpg", :alt => @ship.location.name, :class => "spacestation-image" ) %>
+	</div>
+	
+	<div class="navigation-information">
+		<h2>
+			Navigation
+		</h2>
+		<p>
+			Location: <%= @ship.location.name %>
+		<br />
+			Fuel: <%= number_with_delimiter( @ship.fuel ) %>
+		<br />
+			Max Range: <%= number_with_delimiter( @ship.fuel ) %> AU
+		</p>
+	</div>
 
-<h2>
-	Navigation: <%= @ship.location.name %>
-</h2>
+	<div class="routes">
+		<h3> Routes </h3>
+		<ul>
+			<%= render( :partial => "route", :collection => @ship.location.routes ) %>
+			<li class="routes-spacer">
+			</li>
+		</ul>
+	</div>
 
-	<ul>
-		<%= render( :partial => "route", :collection => @ship.location.routes ) %>
-	</ul>
-	<h3>Fuel: <%= number_with_delimiter( @ship.fuel ) %>
 
 </div>
