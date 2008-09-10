@@ -1,0 +1,17 @@
+	<div class="goods">
+		<h3>
+			Comodities
+		</h3>
+
+		<ul>
+			<%- @ship.location.prices.each do |good| -%>
+				<%= render( :partial => "list_item",
+				            :locals => {
+									:locals => good,
+									:left => "good_left",
+									:right => "good_right"
+								} ) %>
+			<%- end -%>
+			<li class="good-spacer"> </li>
+		</ul>
+	</div>

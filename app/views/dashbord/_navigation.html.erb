@@ -3,6 +3,13 @@
 	<div class=navigation-spacer">
 	<%= image_tag( "4x4.png", :alt => "", :class => "navigation-spacer"  ) %>
 	</div>
+	
+	<%- if flash[:navigation_notice] -%>
+		<div class="navigation-notice">
+			<div id="notice"><%= flash[:navigation_notice] %></div>
+		</div>
+
+	<%- end -%>
 	<div class="spacestation-image">
 		<%= image_tag( "space_station.jpg", :alt => @ship.location.name, :class => "spacestation-image" ) %>
 	</div>
@@ -20,14 +27,6 @@
 		</p>
 	</div>
 
-	<div class="routes">
-		<h3> Routes </h3>
-		<ul>
-			<%= render( :partial => "route", :collection => @ship.location.routes ) %>
-			<li class="routes-spacer">
-			</li>
-		</ul>
-	</div>
-
+	<%= render( :partial => "routes") %>
 
 </div>

@@ -7,6 +7,7 @@ class Ship < ActiveRecord::Base
 	class InsufficientFunds < Exception; end
 	class InsufficientFuel < Exception; end
 	class DoesNotHaveThisCargo < Exception; end
+	class DestinationNotValid < Exception; end
 
 	def max_cargo
 		contaners = cargo.select{ |c| c.name == "Cargo Contaner"}
@@ -19,7 +20,8 @@ class Ship < ActiveRecord::Base
 	end
 
 	def fly_to destination
-		fuel_spent = self.location.routes.reject{ |r| r.to != destination }[0].distance
+		raise DestinationNotValid if self.location.routes.select{ |r| r.to == destination }.empty?
+		fuel_spent = self.location.routes.select{ |r| r.to == destination }[0].distance
 		raise InsufficientFuel unless self.fuel - fuel_spent >= 0
 		self.fuel -= fuel_spent
 		self.location = destination

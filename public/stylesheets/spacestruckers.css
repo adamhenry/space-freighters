@@ -1,13 +1,8 @@
-h3 {
-	margin-right: 150;
-}
-
 body {
 	background: #000 fixed url("/images/nebula_stretch.jpg");
 }
 
 ul {
-	margin-left: 0em;
 	padding-left: 0em;
 }
 
@@ -23,15 +18,11 @@ ul {
 
 .li-left {
 	text-align: left;
+	display: inline;
 }
 
 .li-right {
 	text-align: right;
-}
-
-input.store_field {
-	width: 30px;
-	default: 1;
 }
 
 div.end {
@@ -65,6 +56,12 @@ p.end {
 	background: #002;
 }
 
+.navigation-notice {
+	position: absolute;
+	bottom: 1em;
+	left: 0.5em;
+}
+
 .routes {
 	position: absolute;
 	left: 20em;
@@ -95,6 +92,33 @@ div.spacestation-image {
 }
 
 .spacestation {
+	position: relative;
+	height: 30em;
+	padding-right: 34em;
+}
+
+.goods {
+	position: absolute;
+	top: 1em;
+	right: 1em;
+}
+
+li.good-spacer {
+	width: 30em;
+	height: 0em;
+	list-style-type: none;
+}
+
+input.store-field {
+	width: 30px;
+	default: 1;
+}
+
+img.spacestation-descriptive-image {
+	float: left;
+	height: 5em;
+	width: 6.49em;
+	padding: 0.25em;
 }
 
 .inventory {
@@ -102,4 +126,3 @@ div.spacestation-image {
 	margin: 0px 25px 10px 0;
 	width: 180px;
 }
-

@@ -21,6 +21,10 @@ class DashbordController < ApplicationController
 		rescue Ship::InsufficientFuel
 			flash[:navigation_notice] =
 					"You do not have enfough fuel to reach #{ destination.name }."
+		rescue Ship::DestinationNotValid
+			flash[:navigation_notice] =
+			      "#{ destination.name } is not in the routes from #{ @ship.location.name }."
+			      raise "#{ destination.name } is not in the routes from #{ @ship.location.name }."
 		end
 		redirect_to :action => :index
 	end

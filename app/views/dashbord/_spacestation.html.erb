@@ -4,27 +4,11 @@
 		Spacestation <%= @ship.location.name %>
 	</h2>
 
-	<h3>
-		Comodities
-	</h3>
 	<%- if flash[:station_notice] -%>
 		<div id="notice"><%= flash[:station_notice] %></div>
 	<%- end -%>
+		<%= image_tag("HeadShot.jpg", :class => "spacestation-descriptive-image") %>
+		The spacestion AssWipe has been the backbone of the Herities traid empier. The station was renamed after its most famious administrator Adam Henry. He was most notibley known for takeing care of things. However his name was replaced as the intersetler langwage changed with the historical refrence Adam Henry. Inevidbly the station took on the name of He Who Take On The Ass Hole.
 
-	<ul>
-	<%- for price in @ship.location.prices -%>
-		<li>
-			<%= form_tag(:method => :post, :action => :store ) %>
-			<input type="text" name="amount" class="store_field" >
-			<input type="hidden" value="<%= price.sku.id %>" name="sku" >
-			<input type="Submit" value="buy" name="sale">
-			<input type="Submit" value="sell" name="sale">
-
-			<%= space_up( sprintf( "%-1$*2$s %3$*4$s",
-			            price.name, @price_max_name_length,
-							number_with_delimiter( price.price ), @price_max_length + 5) )%>
-			</form>
-		</li>
-	<%- end -%>
-	</ul>
+	<%= render( :partial => "goods" ) %>
 </div>

@@ -1,0 +1,7 @@
+					<%= form_tag(:method => :post, :action => :store ) %>
+						<input type="text" name="amount" class="store-field" >
+						<input type="hidden" value="<%= locals.sku.id %>" name="sku" >
+						<input type="Submit" value="buy" name="sale">
+						<input type="Submit" value="sell" name="sale">
+					<%= locals.name %>
+					</form>
