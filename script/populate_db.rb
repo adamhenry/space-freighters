@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
-ENV['RAILS_ENV'] = ARGV.first || ENV['RAILS_ENV'] || 'development'  
-require File.expand_path(File.dirname(__FILE__) + "/../config/environment")  
+#ENV['RAILS_ENV'] = ARGV.first || ENV['RAILS_ENV'] || 'development'  
+#require File.expand_path(File.dirname(__FILE__) + "/../config/environment")  
 
 Ship.destroy_all
 Sku.destroy_all
@@ -13,10 +13,10 @@ Distance.destroy_all
 s = Spacestation.create( :name => "Earth Dock 7" )
 Spacestation.create( :name => "Mars Colony 2" )
 Spacestation.create( :name => "Venus Gate" )
-Spacestation.create( :name => "Astroid Mind 11" )
- jt = Spacestation.create( :name => "Juperter's Throne" )
+Spacestation.create( :name => "Asteroid Mind 11" )
+ jt = Spacestation.create( :name => "Jupiter's Throne" )
 
-ship = Ship.create( :name => "HMS Never Sinkible", :location => s, :fuel => 1000 )
+ship = Ship.create( :name => "HMS Never Sinkable", :location => s, :fuel => 1000 )
 
 spacestations = Spacestation.find(:all)
 spacestations.each do |sp1|
@@ -30,12 +30,12 @@ sku = Sku.create( :name => "Square Pigs", :size => 0.2 )
 Sku.create( :name => "Wheat", :size => 0.001 )
 Sku.create( :name => "Ore", :size => 0.001 )
 Sku.create( :name => "Titanium Bar", :size => 1.2 )
-Sku.create( :name => "Mining laser", :size => 5.3 )
+Sku.create( :name => "Mining Laser", :size => 5.3 )
 re = Sku.create( :name => "Retirement", :size => 0 )
-contaner = Sku.create( :name => "Cargo Contaner", :size => 25)
+container = Sku.create( :name => "Cargo Container", :size => 25)
 tank = Sku.create( :name => "Fuel Tank", :size => 100)
 
-Cargo.create( :ship => ship, :amount => 1, :sku => contaner )
+Cargo.create( :ship => ship, :amount => 1, :sku => container )
 Cargo.create( :ship => ship, :amount => 1, :sku => tank )
 
 skus = Sku.find(:all)
@@ -46,4 +46,3 @@ skus.each do |sku|
 	end
 end
 Price.create( :sku => re, :spacestation => jt, :price => 10**9 )
-

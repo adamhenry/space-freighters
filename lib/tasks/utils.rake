@@ -13,6 +13,14 @@ namespace :utils do
 		end
 
 	end
+end
+namespace :db do
+	desc "Populate Develipment Database of SpaceTruckers"
+	task(:populate => :environment) do
+
+		require File.expand_path(File.dirname(__FILE__) + "/../../script/populate_db.rb")  
+
+	end
 
 end
 

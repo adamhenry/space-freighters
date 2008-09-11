@@ -7,6 +7,20 @@ class ApplicationController < ActionController::Base
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
   protect_from_forgery # :secret => '750186ac07c886d4382fc8f3e1cb9367'
+
+  before_filter :check_database
+
+  def check_database
+  		begin
+			@ship = Ship.find(:first)
+			if @ship.nil?
+				redirect_to :action => :db_populate, :controller => :initialize
+			end
+		rescue Object => e
+		#rescue SQLite3::SQLException => e
+			redirect_to :action => :db_initialize, :controller => :initialize
+		end
+  end
   
   # See ActionController::Base for details 
   # Uncomment this to filter the contents of submitted sensitive data parameters

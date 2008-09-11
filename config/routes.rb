@@ -1,6 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
 
   map.root :controller => "dashbord"
+  
+  map.connect 'initialize', :controller => "initialize", :action => "db_initialize"
 
   # The priority is based upon order of creation: first created -> highest priority.
 

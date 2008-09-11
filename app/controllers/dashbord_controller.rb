@@ -1,7 +1,6 @@
 class DashbordController < ApplicationController
 
 	def index
-		@ship = Ship.find :first
 		@spacestations = Spacestation.find(:all).reject{ |s| s == @ship.location }
 
 			@route_max_name_length = max_length( @ship.location.routes.map{ |x| x.to }, :name )
@@ -15,7 +14,6 @@ class DashbordController < ApplicationController
 	end
 
 	def fly_to
-		@ship = Ship.find :first
 		begin
 		@ship.fly_to( destination = Spacestation.find( params[:destination] ) )
 		rescue Ship::InsufficientFuel
@@ -30,7 +28,6 @@ class DashbordController < ApplicationController
 	end
 
 	def store
-		@ship = Ship.find :first
 		amount = params[:amount].to_i
 		sku = Sku.find( params[:sku] )
 		begin
@@ -51,9 +48,8 @@ class DashbordController < ApplicationController
 	end
 
 	def winner
-		
 	end
-	
+
 	#returns the hightest number of caracters in symbol position in obj_array including , for large numbers
 	def max_length obj_array, symbol, comma = nil
 		obj_array.inject( 0 ) do |max, obj|

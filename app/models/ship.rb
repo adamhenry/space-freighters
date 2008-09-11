@@ -9,13 +9,38 @@ class Ship < ActiveRecord::Base
 	class DoesNotHaveThisCargo < Exception; end
 	class DestinationNotValid < Exception; end
 
-	def max_cargo
-		contaners = cargo.select{ |c| c.name == "Cargo Contaner"}
-		contaners[0].size.to_f
+	def fuel_capasity
+		tank = cargo.select{ |c| c.name == "Fuel Tank"}
+		50  + ( !( tank.empty? ) ? tank[0].size * tank[0].amount : 0 )
+	end
+
+	def free_cargo
+		max_cargo - total_cargo
 	end
 
 	def total_cargo
-		units = cargo.reject{ |c| ( c.name != "Cargo Contaner"  ) && ( c.name != "Fuel Tank" ) }
+		cargo.inject( 0 ){ |total, c| total += c.amount * c.sku.size }.to_f
+	end
+
+	def cargo_containers
+		cargo.select{ |c| c.name =="Cargo Container" }
+	end
+
+	def max_cargo
+		container = cargo_containers
+		100 + ( !( container.empty? ) ? container[0].size * container[0].amount : 0 )
+	end
+
+	def total_weight
+		512 + total_cargo
+	end
+
+	def total_length
+		120 + 80 * cargo_containers.length
+	end
+	
+	def total_cargo
+		units = cargo.reject{ |c| ( c.name != "Cargo Container"  ) && ( c.name != "Fuel Tank" ) }
 		units.inject(0){ | total , unit | total =+ unit.size}
 	end
 

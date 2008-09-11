@@ -2,6 +2,9 @@
 		<h3>
 			Comodities
 		</h3>
+		<%- if flash[:station_notice] -%>
+			<div id="notice"><%= number_with_delimiter flash[:station_notice] %></div>
+		<%- end -%>
 
 		<ul>
 			<%- @ship.location.prices.each do |good| -%>

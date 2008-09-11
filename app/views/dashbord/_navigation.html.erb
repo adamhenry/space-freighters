@@ -5,10 +5,7 @@
 	</div>
 	
 	<%- if flash[:navigation_notice] -%>
-		<div class="navigation-notice">
-			<div id="notice"><%= flash[:navigation_notice] %></div>
-		</div>
-
+			<div class="navigation-notice"> <%= flash[:navigation_notice] %> </div>
 	<%- end -%>
 	<div class="spacestation-image">
 		<%= image_tag( "space_station.jpg", :alt => @ship.location.name, :class => "spacestation-image" ) %>
@@ -16,7 +13,7 @@
 	
 	<div class="navigation-information">
 		<h2>
-			Navigation
+			<%= @ship.name %>
 		</h2>
 		<p>
 			Location: <%= @ship.location.name %>

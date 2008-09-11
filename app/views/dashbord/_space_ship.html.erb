@@ -1,0 +1,21 @@
+<div class="space-ship">
+	<%= image_tag("space_ship.jpg") %>
+	<%= image_tag("4x4.png", :class => "spacer") %>
+	<div class="ship-info">
+		<h2><%= @ship.name %></h2>
+		<br />
+		Class: Nestromo
+		<br />
+		Weight: <%= @ship.total_weight %>
+		<br />
+		Length: <%= @ship.total_length %>
+		<br />
+		Cargo Capasity: <%= @ship.max_cargo %>
+		<br />
+		Fuel Copasity: <%= @ship.fuel_capasity %>
+		<br />
+		Thrust: 6.2
+		<br />
+		Fuel Effecentcy: 1
+	</div>
+</div>
