@@ -6,15 +6,15 @@
 		<br />
 		Class: Nestromo
 		<br />
-		Weight: <%= @ship.total_weight %>
+		Weight: <%= number_with_delimiter @ship.total_weight %> Mg
 		<br />
-		Length: <%= @ship.total_length %>
+		Length: <%= number_with_delimiter @ship.total_length %> m
 		<br />
-		Cargo Capasity: <%= @ship.max_cargo %>
+		Cargo Capasity: <%= number_with_delimiter @ship.max_cargo %> m<span class="super-script">3</span>
 		<br />
-		Fuel Copasity: <%= @ship.fuel_capasity %>
+		Fuel Copasity: <%= number_with_delimiter @ship.fuel_capasity %> Tonnes
 		<br />
-		Thrust: 6.2
+		Thrust: 6.2 TN
 		<br />
 		Fuel Effecentcy: 1
 	</div>

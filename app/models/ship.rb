@@ -92,8 +92,6 @@ class Ship < ActiveRecord::Base
 	def set_sale_max_or_not amount, sku
 		# if the amount is not a valid amount assume all
 		has = total_sku_in_cargo sku
-		#amount1 = ( ( has > amount ) && ( 0 < amount ) ) ? amount : has
-		#raise "Selling #{ amount1 } while having #{ has } was fed #{ amount}"
 		( has > amount ) && ( 0 < amount ) ? amount : has
 	end
 
