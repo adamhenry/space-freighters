@@ -1,15 +1,18 @@
-	<div class="goods">
-		<h3>
-			Comodities
-		</h3>
-		<%- if flash[:station_notice] -%>
-			<div id="notice"><%= number_with_delimiter flash[:station_notice] %></div>
-		<%- end -%>
+  <div class="goods">
+    <h3>
+      Comodities
+    </h3>
+    <%- if flash[:station_notice] -%>
+      <div id="notice"><%= number_with_delimiter flash[:station_notice] %></div>
+    <%- end -%>
 
-		<ul>
-			<%- @ship.location.prices.each do |good| -%>
-				<%= list_item_right_left( "good", good ) %>
-			<%- end -%>
-			<li class="good-spacer"> </li>
-		</ul>
-	</div>
+    <ul>
+      <%- @ship.location.prices.each do |good| -%>
+        <%= list_item_right_left( "good", good ) %>
+      <%- end -%>
+      <li class="good-spacer"> </li>
+    </ul>
+    A non-numeric value will buy or sell
+    <br />
+    the maximum amount posible
+  </div>

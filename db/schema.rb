@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(:version => 20080805041034) do
   create_table "cargos", :force => true do |t|
     t.integer  "ship_id"
     t.integer  "sku_id"
-    t.integer  "amount"
+    t.text     "amount_text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(:version => 20080805041034) do
   create_table "ships", :force => true do |t|
     t.string   "name"
     t.integer  "location_id"
-    t.decimal  "SB"
     t.decimal  "fuel"
     t.datetime "created_at"
     t.datetime "updated_at"
