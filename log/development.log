@@ -9327,3 +9327,135 @@ Rendered dashbord/_goods (0.02053)
 Rendered dashbord/_spacestation (0.02091)
 Rendered dashbord/_space_ship (0.00128)
 Completed in 0.22580 (4 reqs/sec) | Rendering: 0.06707 (29%) | DB: 0.13856 (61%) | 200 OK [http://spacetruckers.heroku.com/]
+  [4;36;1mSQL (0.000583)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000215)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.002752)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.002136)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000387)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000251)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000143)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000139)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000137)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000138)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000138)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateShips (20080805023042)
+  [4;35;1mSQL (0.000139)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002499)[0m   [0;1mCREATE TABLE "ships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "location_id" integer DEFAULT NULL NULL, "fuel" decimal DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002015)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080805023042')[0m
+Migrating to CreateSkus (20080805034900)
+  [4;36;1mSQL (0.000367)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002111)[0m   [0mCREATE TABLE "skus" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "image" varchar(255) DEFAULT NULL NULL, "type" varchar(255) DEFAULT NULL NULL, "size" decimal DEFAULT NULL NULL, "description" text DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002768)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080805034900')[0m
+Migrating to CreateCargos (20080805035626)
+  [4;35;1mSQL (0.000379)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002238)[0m   [0;1mCREATE TABLE "cargos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ship_id" integer DEFAULT NULL NULL, "sku_id" integer DEFAULT NULL NULL, "amount_text" text DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001553)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080805035626')[0m
+Migrating to CreateSpacestations (20080805040256)
+  [4;36;1mSQL (0.000373)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002621)[0m   [0mCREATE TABLE "spacestations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "image" varchar(255) DEFAULT NULL NULL, "description" text DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001544)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080805040256')[0m
+Migrating to CreatePrices (20080805040614)
+  [4;35;1mSQL (0.000378)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002127)[0m   [0;1mCREATE TABLE "prices" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sku_id" integer DEFAULT NULL NULL, "spacestation_id" integer DEFAULT NULL NULL, "price" decimal DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001448)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080805040614')[0m
+Migrating to CreateDistances (20080805041034)
+  [4;36;1mSQL (0.000410)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.003695)[0m   [0mCREATE TABLE "distances" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sp1" integer DEFAULT NULL NULL, "sp2" integer DEFAULT NULL NULL, "distance" decimal DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.001906)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080805041034')[0m
+  [4;35;1mSQL (0.001350)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000678)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000075)[0m   [0mPRAGMA index_list("cargos")[0m
+  [4;36;1mSQL (0.000070)[0m   [0;1mPRAGMA index_list("distances")[0m
+  [4;35;1mSQL (0.000065)[0m   [0mPRAGMA index_list("prices")[0m
+  [4;36;1mSQL (0.000060)[0m   [0;1mPRAGMA index_list("ships")[0m
+  [4;35;1mSQL (0.000095)[0m   [0mPRAGMA index_list("skus")[0m
+  [4;36;1mSQL (0.000070)[0m   [0;1mPRAGMA index_list("spacestations")[0m
+  [4;36;1mShip Load (0.000952)[0m   [0;1mSELECT * FROM "ships" [0m
+  [4;35;1mSku Load (0.000195)[0m   [0mSELECT * FROM "skus" [0m
+  [4;36;1mCargo Load (0.000204)[0m   [0;1mSELECT * FROM "cargos" [0m
+  [4;35;1mSpacestation Load (0.000198)[0m   [0mSELECT * FROM "spacestations" [0m
+  [4;36;1mPrice Load (0.000170)[0m   [0;1mSELECT * FROM "prices" [0m
+  [4;35;1mDistance Load (0.000166)[0m   [0mSELECT * FROM "distances" [0m
+  [4;36;1mSpacestation Create (0.000661)[0m   [0;1mINSERT INTO "spacestations" ("name", "updated_at", "description", "image", "created_at") VALUES('Earth Dock 7', '2008-09-12 16:29:18', 'Earth Dock 7 is only one out of over a thousand orbital space stations. The planet this station hangs over had produced and consumes almost an enter stellar system of goods in a single year. The ports are constantly busy with traffic commerce. The tremendous population spills out millions of people new to the spaceways every year. The one grate cauldron of humanity.', '4.jpg', '2008-09-12 16:29:18')[0m
+  [4;35;1mSpacestation Create (0.000529)[0m   [0mINSERT INTO "spacestations" ("name", "updated_at", "description", "image", "created_at") VALUES('Mars Colony 2', '2008-09-12 16:29:18', 'The second of six space stations acting as hubs for a words commerce. Mars Colony was Earth first non-terrestrial colony. Its burgeoning population second only to Earth. Over the long history of Mars it has always struggled under Earth as a Satiate state. Harsh labor laws and poor political representation of the working pore have left this planet in a constant state of turmoil.', '1.jpg', '2008-09-12 16:29:18')[0m
+  [4;36;1mSpacestation Create (0.000520)[0m   [0;1mINSERT INTO "spacestations" ("name", "updated_at", "description", "image", "created_at") VALUES('Venus Gate', '2008-09-12 16:29:18', 'This singular space station stands over a verdant world. Although thought the closest earth like planet to earth the terraforming of its harsh atmosphere has taken an unordinate amount of time. With the late entry into interstellar development Venus has become an ecological oases of life that the Earth has long seance lost. The majority of humanity''s food crops are grown below, however the vast amounts of tonnage is contracted out to large hullers.', '2.jpg', '2008-09-12 16:29:18')[0m
+  [4;35;1mSpacestation Create (0.000500)[0m   [0mINSERT INTO "spacestations" ("name", "updated_at", "description", "image", "created_at") VALUES('Asteroid Mine 11', '2008-09-12 16:29:18', 'One of many asteroid mines that peeper the asteroid belt. Asteroid Mine 11 was depleted over a malinum ago and left abandoned. An industrious man calling himself Atlas purchased it and deemed it its own state. After a short time and a flood of Ayn Rand-ion immigrants Asteroid Mine 11 had become a tremendous center of commerce. Not soon after Earth''s political establishment moved to take it over. Through for cite and an unusual political mind Atlas preemptively halted Earth''s attempts. The threat that Asteroid Mine 11 and Mars Colony rebels might leverage each overs strengths to opose Earth holds it in check.', '3.jpg', '2008-09-12 16:29:18')[0m
+  [4;36;1mSpacestation Create (0.000481)[0m   [0;1mINSERT INTO "spacestations" ("name", "updated_at", "description", "image", "created_at") VALUES('Jupiter''s Throne', '2008-09-12 16:29:18', 'The center of luxury and pleasure Jupiter''s Throne is the jewel of the Universe. The elite of the galaxy dream of retiring to this decadent palace. If, only, you where some how able to afford it.', '5.jpg', '2008-09-12 16:29:18')[0m
+  [4;35;1mShip Create (0.000483)[0m   [0mINSERT INTO "ships" ("name", "updated_at", "fuel", "location_id", "created_at") VALUES('HMS Never Sinkable', '2008-09-12 16:29:18', 1000.0, 1, '2008-09-12 16:29:18')[0m
+  [4;36;1mSpacestation Load (0.000952)[0m   [0;1mSELECT * FROM "spacestations" [0m
+  [4;35;1mDistance Create (0.000459)[0m   [0mINSERT INTO "distances" ("updated_at", "sp1", "sp2", "distance", "created_at") VALUES('2008-09-12 16:29:18', 1, 2, 85.539, '2008-09-12 16:29:18')[0m
+  [4;36;1mDistance Create (0.000532)[0m   [0;1mINSERT INTO "distances" ("updated_at", "sp1", "sp2", "distance", "created_at") VALUES('2008-09-12 16:29:18', 1, 3, 49.387, '2008-09-12 16:29:18')[0m
+  [4;35;1mDistance Create (0.000479)[0m   [0mINSERT INTO "distances" ("updated_at", "sp1", "sp2", "distance", "created_at") VALUES('2008-09-12 16:29:18', 1, 4, 18.321, '2008-09-12 16:29:18')[0m
+  [4;36;1mDistance Create (0.000528)[0m   [0;1mINSERT INTO "distances" ("updated_at", "sp1", "sp2", "distance", "created_at") VALUES('2008-09-12 16:29:18', 1, 5, 98.655, '2008-09-12 16:29:18')[0m
+  [4;35;1mDistance Create (0.000497)[0m   [0mINSERT INTO "distances" ("updated_at", "sp1", "sp2", "distance", "created_at") VALUES('2008-09-12 16:29:18', 2, 1, 28.625, '2008-09-12 16:29:18')[0m
+  [4;36;1mDistance Create (0.000477)[0m   [0;1mINSERT INTO "distances" ("updated_at", "sp1", "sp2", "distance", "created_at") VALUES('2008-09-12 16:29:18', 2, 3, 4.858, '2008-09-12 16:29:18')[0m
+  [4;35;1mDistance Create (0.000492)[0m   [0mINSERT INTO "distances" ("updated_at", "sp1", "sp2", "distance", "created_at") VALUES('2008-09-12 16:29:18', 2, 4, 51.106, '2008-09-12 16:29:18')[0m
+  [4;36;1mDistance Create (0.000439)[0m   [0;1mINSERT INTO "distances" ("updated_at", "sp1", "sp2", "distance", "created_at") VALUES('2008-09-12 16:29:18', 2, 5, 61.441, '2008-09-12 16:29:18')[0m
+  [4;35;1mDistance Create (0.000558)[0m   [0mINSERT INTO "distances" ("updated_at", "sp1", "sp2", "distance", "created_at") VALUES('2008-09-12 16:29:18', 3, 1, 83.193, '2008-09-12 16:29:18')[0m
+  [4;36;1mDistance Create (0.000512)[0m   [0;1mINSERT INTO "distances" ("updated_at", "sp1", "sp2", "distance", "created_at") VALUES('2008-09-12 16:29:18', 3, 2, 23.72, '2008-09-12 16:29:18')[0m
+  [4;35;1mDistance Create (0.000500)[0m   [0mINSERT INTO "distances" ("updated_at", "sp1", "sp2", "distance", "created_at") VALUES('2008-09-12 16:29:18', 3, 4, 44.789, '2008-09-12 16:29:18')[0m
+  [4;36;1mDistance Create (0.000497)[0m   [0;1mINSERT INTO "distances" ("updated_at", "sp1", "sp2", "distance", "created_at") VALUES('2008-09-12 16:29:18', 3, 5, 33.202, '2008-09-12 16:29:18')[0m
+  [4;35;1mDistance Create (0.000467)[0m   [0mINSERT INTO "distances" ("updated_at", "sp1", "sp2", "distance", "created_at") VALUES('2008-09-12 16:29:18', 4, 1, 53.852, '2008-09-12 16:29:18')[0m
+  [4;36;1mDistance Create (0.000528)[0m   [0;1mINSERT INTO "distances" ("updated_at", "sp1", "sp2", "distance", "created_at") VALUES('2008-09-12 16:29:18', 4, 2, 96.843, '2008-09-12 16:29:18')[0m
+  [4;35;1mDistance Create (0.000447)[0m   [0mINSERT INTO "distances" ("updated_at", "sp1", "sp2", "distance", "created_at") VALUES('2008-09-12 16:29:18', 4, 3, 77.167, '2008-09-12 16:29:18')[0m
+  [4;36;1mDistance Create (0.000471)[0m   [0;1mINSERT INTO "distances" ("updated_at", "sp1", "sp2", "distance", "created_at") VALUES('2008-09-12 16:29:18', 4, 5, 90.711, '2008-09-12 16:29:18')[0m
+  [4;35;1mDistance Create (0.000467)[0m   [0mINSERT INTO "distances" ("updated_at", "sp1", "sp2", "distance", "created_at") VALUES('2008-09-12 16:29:18', 5, 1, 51.877, '2008-09-12 16:29:18')[0m
+  [4;36;1mDistance Create (0.000454)[0m   [0;1mINSERT INTO "distances" ("updated_at", "sp1", "sp2", "distance", "created_at") VALUES('2008-09-12 16:29:18', 5, 2, 71.395, '2008-09-12 16:29:18')[0m
+  [4;35;1mDistance Create (0.000470)[0m   [0mINSERT INTO "distances" ("updated_at", "sp1", "sp2", "distance", "created_at") VALUES('2008-09-12 16:29:18', 5, 3, 45.832, '2008-09-12 16:29:18')[0m
+  [4;36;1mDistance Create (0.000466)[0m   [0;1mINSERT INTO "distances" ("updated_at", "sp1", "sp2", "distance", "created_at") VALUES('2008-09-12 16:29:18', 5, 4, 99.969, '2008-09-12 16:29:18')[0m
+  [4;35;1mSku Create (0.000472)[0m   [0mINSERT INTO "skus" ("name", "size", "updated_at", "type", "description", "image", "created_at") VALUES('Square Pigs', 0.2, '2008-09-12 16:29:18', NULL, NULL, NULL, '2008-09-12 16:29:18')[0m
+  [4;36;1mSku Create (0.000435)[0m   [0;1mINSERT INTO "skus" ("name", "size", "updated_at", "type", "description", "image", "created_at") VALUES('Wheat', 0.001, '2008-09-12 16:29:18', NULL, NULL, NULL, '2008-09-12 16:29:18')[0m
+  [4;35;1mSku Create (0.000451)[0m   [0mINSERT INTO "skus" ("name", "size", "updated_at", "type", "description", "image", "created_at") VALUES('Ore', 0.001, '2008-09-12 16:29:18', NULL, NULL, NULL, '2008-09-12 16:29:18')[0m
+  [4;36;1mSku Create (0.000480)[0m   [0;1mINSERT INTO "skus" ("name", "size", "updated_at", "type", "description", "image", "created_at") VALUES('Titanium Bar', 1.2, '2008-09-12 16:29:18', NULL, NULL, NULL, '2008-09-12 16:29:18')[0m
+  [4;35;1mSku Create (0.000433)[0m   [0mINSERT INTO "skus" ("name", "size", "updated_at", "type", "description", "image", "created_at") VALUES('Mining Laser', 5.3, '2008-09-12 16:29:18', NULL, NULL, NULL, '2008-09-12 16:29:18')[0m
+  [4;36;1mSku Create (0.000484)[0m   [0;1mINSERT INTO "skus" ("name", "size", "updated_at", "type", "description", "image", "created_at") VALUES('Retirement', 0.0, '2008-09-12 16:29:18', NULL, NULL, NULL, '2008-09-12 16:29:18')[0m
+  [4;35;1mSku Create (0.000477)[0m   [0mINSERT INTO "skus" ("name", "size", "updated_at", "type", "description", "image", "created_at") VALUES('Cargo Container', 25.0, '2008-09-12 16:29:18', NULL, NULL, NULL, '2008-09-12 16:29:18')[0m
+  [4;36;1mSku Create (0.000430)[0m   [0;1mINSERT INTO "skus" ("name", "size", "updated_at", "type", "description", "image", "created_at") VALUES('Fuel Tank', 100.0, '2008-09-12 16:29:18', NULL, NULL, NULL, '2008-09-12 16:29:18')[0m
+  [4;35;1mCargo Create (0.000469)[0m   [0mINSERT INTO "cargos" ("sku_id", "ship_id", "updated_at", "amount_text", "created_at") VALUES(7, 1, '2008-09-12 16:29:18', '1', '2008-09-12 16:29:18')[0m
+  [4;36;1mCargo Create (0.000475)[0m   [0;1mINSERT INTO "cargos" ("sku_id", "ship_id", "updated_at", "amount_text", "created_at") VALUES(8, 1, '2008-09-12 16:29:18', '1', '2008-09-12 16:29:18')[0m
+  [4;35;1mSku Load (0.001553)[0m   [0mSELECT * FROM "skus" [0m
+  [4;36;1mPrice Create (0.000458)[0m   [0;1mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(1, 1, '2008-09-12 16:29:18', 10.0, '2008-09-12 16:29:18')[0m
+  [4;35;1mPrice Create (0.000565)[0m   [0mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(1, 2, '2008-09-12 16:29:18', 3.0, '2008-09-12 16:29:18')[0m
+  [4;36;1mPrice Create (0.000500)[0m   [0;1mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(1, 3, '2008-09-12 16:29:18', 11.2, '2008-09-12 16:29:18')[0m
+  [4;35;1mPrice Create (0.000588)[0m   [0mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(1, 4, '2008-09-12 16:29:18', 11.8, '2008-09-12 16:29:18')[0m
+  [4;36;1mPrice Create (0.000500)[0m   [0;1mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(1, 5, '2008-09-12 16:29:18', 6.6, '2008-09-12 16:29:18')[0m
+  [4;35;1mPrice Create (0.000519)[0m   [0mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(2, 1, '2008-09-12 16:29:18', 0.028, '2008-09-12 16:29:18')[0m
+  [4;36;1mPrice Create (0.000542)[0m   [0;1mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(2, 2, '2008-09-12 16:29:18', 0.016, '2008-09-12 16:29:18')[0m
+  [4;35;1mPrice Create (0.000452)[0m   [0mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(2, 3, '2008-09-12 16:29:18', 0.022, '2008-09-12 16:29:18')[0m
+  [4;36;1mPrice Create (0.000487)[0m   [0;1mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(2, 4, '2008-09-12 16:29:18', 0.064, '2008-09-12 16:29:18')[0m
+  [4;35;1mPrice Create (0.000450)[0m   [0mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(2, 5, '2008-09-12 16:29:18', 0.041, '2008-09-12 16:29:18')[0m
+  [4;36;1mPrice Create (0.000483)[0m   [0;1mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(3, 1, '2008-09-12 16:29:18', 0.07, '2008-09-12 16:29:18')[0m
+  [4;35;1mPrice Create (0.000476)[0m   [0mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(3, 2, '2008-09-12 16:29:18', 0.04, '2008-09-12 16:29:18')[0m
+  [4;36;1mPrice Create (0.000478)[0m   [0;1mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(3, 3, '2008-09-12 16:29:18', 0.049, '2008-09-12 16:29:18')[0m
+  [4;35;1mPrice Create (0.000485)[0m   [0mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(3, 4, '2008-09-12 16:29:18', 0.03, '2008-09-12 16:29:18')[0m
+  [4;36;1mPrice Create (0.000581)[0m   [0;1mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(3, 5, '2008-09-12 16:29:18', 0.043, '2008-09-12 16:29:18')[0m
+  [4;35;1mPrice Create (0.000499)[0m   [0mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(4, 1, '2008-09-12 16:29:18', 56.4, '2008-09-12 16:29:18')[0m
+  [4;36;1mPrice Create (0.000475)[0m   [0;1mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(4, 2, '2008-09-12 16:29:18', 66.0, '2008-09-12 16:29:18')[0m
+  [4;35;1mPrice Create (0.000502)[0m   [0mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(4, 3, '2008-09-12 16:29:18', 30.0, '2008-09-12 16:29:18')[0m
+  [4;36;1mPrice Create (0.000490)[0m   [0;1mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(4, 4, '2008-09-12 16:29:18', 52.8, '2008-09-12 16:29:18')[0m
+  [4;35;1mPrice Create (0.000473)[0m   [0mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(4, 5, '2008-09-12 16:29:18', 66.0, '2008-09-12 16:29:18')[0m
+  [4;36;1mPrice Create (0.000446)[0m   [0;1mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(5, 1, '2008-09-12 16:29:18', 190.8, '2008-09-12 16:29:18')[0m
+  [4;35;1mPrice Create (0.000490)[0m   [0mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(5, 2, '2008-09-12 16:29:18', 190.8, '2008-09-12 16:29:18')[0m
+  [4;36;1mPrice Create (0.000487)[0m   [0;1mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(5, 3, '2008-09-12 16:29:18', 270.3, '2008-09-12 16:29:18')[0m
+  [4;35;1mPrice Create (0.000482)[0m   [0mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(5, 4, '2008-09-12 16:29:18', 323.3, '2008-09-12 16:29:18')[0m
+  [4;36;1mPrice Create (0.000509)[0m   [0;1mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(5, 5, '2008-09-12 16:29:18', 137.8, '2008-09-12 16:29:18')[0m
+  [4;35;1mPrice Create (0.000490)[0m   [0mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(7, 1, '2008-09-12 16:29:18', 1250.0, '2008-09-12 16:29:18')[0m
+  [4;36;1mPrice Create (0.000490)[0m   [0;1mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(7, 2, '2008-09-12 16:29:18', 1625.0, '2008-09-12 16:29:18')[0m
+  [4;35;1mPrice Create (0.000759)[0m   [0mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(7, 3, '2008-09-12 16:29:18', 825.0, '2008-09-12 16:29:18')[0m
+  [4;36;1mPrice Create (0.000499)[0m   [0;1mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(7, 4, '2008-09-12 16:29:18', 825.0, '2008-09-12 16:29:18')[0m
+  [4;35;1mPrice Create (0.000429)[0m   [0mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(7, 5, '2008-09-12 16:29:18', 1075.0, '2008-09-12 16:29:18')[0m
+  [4;36;1mPrice Create (0.000475)[0m   [0;1mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(8, 1, '2008-09-12 16:29:18', 4200.0, '2008-09-12 16:29:18')[0m
+  [4;35;1mPrice Create (0.000449)[0m   [0mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(8, 2, '2008-09-12 16:29:18', 3300.0, '2008-09-12 16:29:18')[0m
+  [4;36;1mPrice Create (0.000544)[0m   [0;1mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(8, 3, '2008-09-12 16:29:18', 3600.0, '2008-09-12 16:29:18')[0m
+  [4;35;1mPrice Create (0.000580)[0m   [0mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(8, 4, '2008-09-12 16:29:18', 5600.0, '2008-09-12 16:29:18')[0m
+  [4;36;1mPrice Create (0.000439)[0m   [0;1mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(8, 5, '2008-09-12 16:29:18', 3900.0, '2008-09-12 16:29:18')[0m
+  [4;35;1mPrice Create (0.000585)[0m   [0mINSERT INTO "prices" ("sku_id", "spacestation_id", "updated_at", "price", "created_at") VALUES(6, 5, '2008-09-12 16:29:18', 1000000000.0, '2008-09-12 16:29:18')[0m

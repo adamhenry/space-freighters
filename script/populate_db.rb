@@ -35,7 +35,7 @@ ship = Ship.create( :name => "HMS Never Sinkable", :location => s, :fuel => 1000
 spacestations = Spacestation.find(:all)
 spacestations.each do |sp1|
   spacestations.reject { |sp| sp == sp1 }.each do |sp2|
-    distance = rand( 10**5 ) / 1000.0 + 1 
+    distance = rand( 10**4 ) / 1000.0 + 1 
     Distance.create( :sp1 => sp1.id, :sp2 => sp2.id, :distance => distance )
   end
 end
