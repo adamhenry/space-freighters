@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.root :controller => "dashbord"
+  map.root :controller => "dashbord", :action => "introduction"
   
   map.connect 'initialize', :controller => "initialize", :action => "db_initialize"
 

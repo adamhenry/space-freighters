@@ -10,7 +10,7 @@ Spacestation.destroy_all
 Price.destroy_all
 Distance.destroy_all
 
-text = "Earth Dock 7 is only one out of over a thousand orbital space stations. The planet this station hangs over had produced and consumes almost an enter stellar system of goods in a single year. The ports are constantly busy  with traffic commerce. The tremendous population spills out millions of people new to the spaceways every year. The one grate cauldron of humanity."
+text = "Earth Dock 7 is only one out of over a thousand orbital space stations.  This array of space platforms process and and ship trillions of tones of goods and billions of people every year.  No where else in the known galaxy do more goods feed into the shipping lanes of the Milky Way. Earth is the one great cauldron of humanity."
 
 s = Spacestation.create( :name => "Earth Dock 7", :description => text, :image => "4.jpg" )
 
@@ -18,7 +18,7 @@ text = "The second of six space stations acting as hubs for a words commerce. Ma
 
 Spacestation.create( :name => "Mars Colony 2", :description => text, :image => "1.jpg" )
 
-text = "This singular space station stands over a verdant world. Although thought the closest earth like planet to earth the terraforming of its harsh atmosphere has taken an unordinate amount of time. With the late entry into interstellar development Venus has become an ecological oases of life that the Earth has long seance lost. The majority of humanity's food crops are grown below, however the vast amounts of tonnage is contracted out to large hullers."
+text = "This singular space station stands over a verdant world. Although thought it's the closest earth-like planet, terraforming of its harsh atmosphere has taken an inordinant amount of time. With its late entry into interstellar development, Venus has become an ecological oases of life that Earth has long since lost. The majority of humanity's crops are grown below, however the vast amounts of tonnage is contracted out to large hullers."
 
 Spacestation.create( :name => "Venus Gate", :description => text, :image => "2.jpg" )
 

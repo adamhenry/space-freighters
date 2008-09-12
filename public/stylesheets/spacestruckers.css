@@ -31,14 +31,18 @@ ul {
 	text-align: right;
 }
 
-div.end {
+div.end, .introduction {
 	position: absolute;
 	padding: 2em;
 	width: 40em;
 	top: 15em;
 	left: 15em;
 	background: #002;
-	border: 3px gray solid;
+	border: 0.3em gray solid;
+}
+
+.introduction {
+	top: 5em;
 }
 
 .super-script {
@@ -47,16 +51,16 @@ div.end {
 }
 
 .navigation, .spacestation, .inventory, .space-ship {
-	border: 3px gray solid;
-	margin: 3px 300px 10px 25px;
-	padding: 3px 25px;
+	border: 0.3em gray solid;
+	margin: 1em 24.6em 2em 2.5em;
+	padding: 1em 2.5em;
 	background: #002;
 }
 
 .navigation {
 	position: relative;
-	border: 3px gray solid;
-	margin: 3px 25px 10px 25px;
+	border: 0.3em gray solid;
+	margin: 1em 2.5em 2em 2.5em;
 	padding: 0em;
 	background: #002;
 }
@@ -71,7 +75,7 @@ div.end {
 
 .routes {
 	position: absolute;
-	padding-right: 10em;
+	padding-right: 1em;
 	right: 225px;
 	top: 0em;
 }
@@ -101,8 +105,8 @@ div.spacestation-image {
 
 .spacestation {
 	position: relative;
-	height: 30em;
-	padding-right: 34em;
+	height: 23em;
+	padding-right: 30em;
 }
 
 .goods {
@@ -131,8 +135,8 @@ img.spacestation-descriptive-image {
 
 .inventory {
 	float: right;
-	margin: 0px 25px 10px 0;
-	width: 210px;
+	margin: 0em 2.5em 1em 0em;
+	width: 16em;
 }
 
 .space-ship {

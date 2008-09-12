@@ -4,6 +4,9 @@ class DashbordController < ApplicationController
 		@spacestations = Spacestation.find(:all).reject{ |s| s == @ship.location }
 	end
 
+	def introduction
+	end
+
 	def fly_to
 		begin
 		@ship.fly_to( destination = Spacestation.find( params[:destination] ) )
