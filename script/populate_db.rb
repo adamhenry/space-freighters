@@ -42,7 +42,7 @@ end
 
 sku = Sku.create( :name => "Square Pigs", :size => 0.2 )
 Sku.create( :name => "Wheat", :size => 0.001 )
-Sku.create( :name => "Ore", :size => 0.001 )
+Sku.create( :name => "Ore", :size => 0.02 )
 Sku.create( :name => "Titanium Bar", :size => 1.2 )
 Sku.create( :name => "Mining Laser", :size => 5.3 )
 re = Sku.create( :name => "Retirement", :size => 0 )
