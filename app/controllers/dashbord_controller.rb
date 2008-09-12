@@ -8,7 +8,7 @@ class DashbordController < ApplicationController
 		begin
 		@ship.fly_to( destination = Spacestation.find( params[:destination] ) )
 		rescue Ship::InsufficientFuel
-			flash[:navigation_notice] = "You do not have enfough fuel to reach #{ destination.name }."
+			flash[:navigation_notice] = "You do not have enough fuel to reach #{ destination.name }."
 		rescue Ship::DestinationNotValid
 			flash[:navigation_notice] = "#{ destination.name } is not in the routes from #{ @ship.location.name }."
 		end
@@ -25,8 +25,9 @@ class DashbordController < ApplicationController
 						"You have bought #{cargo.amount} unit#{ cargo.amount > 1 ? "s" : "" } of  #{sku.name}"
 				rescue Ship::InsufficientFunds
 					flash[:station_notice] = "You have insufficient funds to buy #{sku.name}"
-				end
+				else
 				redirect_to :action => :winner if cargo.name == "Retirement"
+				end
 			elsif params[:sale] == "sell"
 				begin
 					sold = @ship.sell sku, amount

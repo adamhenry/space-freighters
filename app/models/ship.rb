@@ -9,7 +9,7 @@ class Ship < ActiveRecord::Base
 	class DoesNotHaveThisCargo < Exception; end
 	class DestinationNotValid < Exception; end
 
-	def fuel_capasity
+	def fuel_capacity
 		tank = cargo.select{ |c| c.name == "Fuel Tank"}
 		50  + ( !( tank.empty? ) ? tank[0].size * tank[0].amount : 0 )
 	end
@@ -65,11 +65,11 @@ class Ship < ActiveRecord::Base
 	end
 
 	def add_cargo sku, amount
-		merchendice = get_sku_in_cargo( sku )
-		if merchendice.empty?
+		merchandise = get_sku_in_cargo( sku )
+		if merchandise.empty?
 			Cargo.create( :sku => sku, :ship => self, :amount => amount )
 		else
-			Cargo.update( merchendice[0].id, :amount => ( merchendice[0].amount + amount ) )
+			Cargo.update( merchandise[0].id, :amount => ( merchandise[0].amount + amount ) )
 		end
 	end
 

@@ -5,11 +5,7 @@
 	</h2>
 
 		<%= image_tag("HeadShot.jpg", :class => "spacestation-descriptive-image") %>
-		The space station ButWipe has been the backbone of the Herities triad empire. The
-		station was renamed after its most famous administrator Adam Henry. He was most
-		notably known for taking care of things. However his name was replaced as the
-		interstellar language changed with the historical reference Adam Henry. Inevitably
-		the station took on the name of He Who Takes Care of the But.
+		<%= @ship.location.description %>
 
 	<%= render( :partial => "goods" ) %>
 </div>

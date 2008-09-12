@@ -8,7 +8,7 @@
 			<div class="navigation-notice"> <%= flash[:navigation_notice] %> </div>
 	<%- end -%>
 	<div class="spacestation-image">
-		<%= image_tag( "space_station.jpg", :alt => @ship.location.name, :class => "spacestation-image" ) %>
+		<%= image_tag( @ship.location.image, :alt => @ship.location.name, :class => "spacestation-image" ) %>
 	</div>
 	
 	<div class="navigation-information">
