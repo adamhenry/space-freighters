@@ -55,7 +55,7 @@ Cargo.create( :ship => ship, :amount => 1, :sku => tank )
 skus = Sku.find(:all)
 skus.each do |sku|
   spacestations.each do |sp|
-    price = ( rand(300) + rand(300) + rand(300) ) * sku.size
+    price = ( rand(30) + rand(30) + rand(30) ) * sku.size
     Price.create( :sku => sku, :spacestation => sp, :price => price ) unless price <= 0
   end
 end
