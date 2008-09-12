@@ -30,7 +30,7 @@ text ="The center of luxury and pleasure Jupiter's Throne is the jewel of the Un
 
  jt = Spacestation.create( :name => "Jupiter's Throne", :description => text, :image => "5.jpg" )
 
-ship = Ship.create( :name => "HMS Never Sinkable", :location => s, :fuel => 1000 )
+ship = Ship.create( :name => "USS Super Freighter Ulysses", :location => s, :fuel => 100 )
 
 spacestations = Spacestation.find(:all)
 spacestations.each do |sp1|
