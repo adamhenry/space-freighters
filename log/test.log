@@ -1,3 +1,0 @@
-# Logfile created on Thu Sep 11 22:19:17 -0700 2008  [4;36;1mSQL (0.001026)[0m   [0;1mSET client_min_messages TO 'panic'[0m
-  [4;35;1mSQL (0.001098)[0m   [0mSET client_min_messages TO 'warning'[0m
-  [4;36;1mSQL (0.001479)[0m   [0;1mROLLBACK[0m
